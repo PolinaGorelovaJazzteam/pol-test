@@ -32,3 +32,7 @@ jobs:
 
       - run: npx nx-cloud record -- nx format:check --base=origin/master
       - run: npx nx-cloud record -- nx affected -t lint test build --base=origin/master
+
+      - run: exit 0
+        if: success()
+
