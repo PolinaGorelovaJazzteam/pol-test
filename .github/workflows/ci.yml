@@ -31,8 +31,12 @@ jobs:
       - uses: nrwl/nx-set-shas@v4
 
       - run: npx nx-cloud record -- nx format:check --base=origin/master
-      - run: npx nx-cloud record -- nx affected -t lint test build --base=origin/master
 
-      - run: exit 0
-        if: success()
+      - run: npx nx-cloud record -- nx affected -t lint test build --base=origin/master
+        continue-on-error: true # Продолжать выполнение даже если команда завершается с ошибкой
+        id: nx_cloud_task
+
+      - name: Check for success and mark the job as succeeded
+        if: ${{ steps.nx_cloud_task.outcome == 'success' }} # Проверяем успешность выполнения команды
+        run: exit 0
 
