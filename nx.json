@@ -57,5 +57,13 @@
       }
     }
   },
+  "targetDefaults": {
+    "build": {
+      "cache": true
+    },
+    "test": {
+      "cache": true
+    }
+  },
   "nxCloudAccessToken": "YzgwZjUyNzMtZjNhYS00YjQ2LWIyZTAtZTdiMDc0ZTA3MjM3fHJlYWQtd3JpdGU="
 }
