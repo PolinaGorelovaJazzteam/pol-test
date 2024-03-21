@@ -6,7 +6,7 @@ export interface TestLibProps {}
 export function TestLib(props: TestLibProps) {
   return (
     <div className={styles['container']}>
-      <h1>Welcome to TestLiddddddb!</h1>
+      <h1>Welcome to TestLiddddddы!</h1>
     </div>
   );
 }
